@@ -1,4 +1,3 @@
-# GitHub UserName: joejoedat-collab
 
 # Enhanced U-Net with ASPP and Attention Gates for Building Segmentation
 
