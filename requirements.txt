@@ -1,0 +1,25 @@
+# Core deep learning
+tensorflow>=2.13,<2.16
+
+# Numerical computing
+numpy>=1.23
+scipy>=1.9
+
+# Image processing
+opencv-python>=4.7
+
+# Data handling
+scikit-learn>=1.2
+
+# Data augmentation
+keras-preprocessing>=1.1.2
+
+# Visualization
+matplotlib>=3.7
+
+# Dataset download
+kagglehub>=0.2.0
+
+# Model visualization (optional)
+pydot>=1.4
+graphviz>=0.20
