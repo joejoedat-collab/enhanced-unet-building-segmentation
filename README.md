@@ -42,16 +42,16 @@ enhanced-unet-building-segmentation/
 ├── LICENSE
 │
 ├── models/
-│   └── enhanced_unet.py          ⭐ from your final model
+│   └── enhanced_unet.py         
 │
 ├── losses/
-│   └── losses.py                 ⭐ Dice, BCE+Dice, Tversky
+│   └── losses.py    Dice, BCE+Dice, Tversky
 │
 ├── data/
-│   └── README.md                 ⭐ dataset instructions only
+│   └── README.md           dataset instructions only
 │
 ├── training/
-│   ├── train_patch_based.py      ⭐ training loop
+│   ├── train_patch_based.py   training loop
 │   └── callbacks.py
 │
 ├── evaluation/
