@@ -32,3 +32,41 @@ The final model consists of:
 - Boundary refinement prior to final prediction
 
 The final implementation is available in: models/enhanced_unet_final.py
+
+---
+##  The directories are structured as seen below
+enhanced-unet-building-segmentation/
+│
+├── README.md
+├── requirements.txt
+├── LICENSE
+│
+├── models/
+│   └── enhanced_unet.py          ⭐ from your final model
+│
+├── losses/
+│   └── losses.py                 ⭐ Dice, BCE+Dice, Tversky
+│
+├── data/
+│   └── README.md                 ⭐ dataset instructions only
+│
+├── training/
+│   ├── train_patch_based.py      ⭐ training loop
+│   └── callbacks.py
+│
+├── evaluation/
+│   ├── metrics.py
+│   ├── threshold_search.py
+│   └── flops.py
+│
+├── inference/
+│   └── predict_full_image.py
+│
+├── experiments/
+│   └── ablation_table.md
+│
+└── figures/
+    └── architecture.png
+
+
+
