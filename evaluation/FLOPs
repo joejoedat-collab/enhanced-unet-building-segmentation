@@ -1,0 +1,27 @@
+# Calculate FLOPs
+
+def get_flops_onnx(model, input_shape=(1,256,256,3)):
+    # Convert TF model → ONNX
+    spec = (tf.TensorSpec(input_shape, tf.float32, name="input"),)
+    onnx_model, _ = tf2onnx.convert.from_keras(model, input_signature=spec, opset=13)
+
+    total_flops = 0
+
+    # Count FLOPs from ONNX graph
+    for node in onnx_model.graph.node:
+        if node.op_type in ["Conv", "Gemm"]:
+            # Get filters
+            for inp in node.input:
+                for init in onnx_model.graph.initializer:
+                    if init.name == inp:
+                        weights = numpy_helper.to_array(init)
+                        flops = weights.size
+                        total_flops += flops
+
+    return total_flops
+
+model = deep_unet_aspp_att()
+
+flops = get_flops_onnx(model)
+print("FLOPs:", flops)
+print("GFLOPs:", flops / 1e9)
