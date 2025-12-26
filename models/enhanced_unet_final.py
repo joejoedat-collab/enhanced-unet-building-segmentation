@@ -20,9 +20,9 @@ def attention_gate(x, g, inter_channels):
     y = layers.Multiply()([x, psi])
     return y
 
-# 2. ASPP (optimized: filters 256 instead of 2048)
+# 2. ASPP (optimized: filters 512 instead of 2048)
 # -------------------------------------------
-def aspp_block(x, filters=256):
+def aspp_block(x, filters=512):
 
     b1 = layers.Conv2D(filters, 1, padding='same', use_bias=False)(x)
     b1 = layers.BatchNormalization()(b1)
