@@ -31,4 +31,4 @@ The final model consists of:
 - An ASPP module placed at the bottleneck layer
 - Boundary refinement prior to final prediction
 
-The final implementation is available in: >>>>>>>>>>>>Add location
+The final implementation is available in: models/enhanced_unet_final.py
