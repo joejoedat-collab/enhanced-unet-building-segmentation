@@ -40,5 +40,4 @@ and **loss function selection**.
 
 - All models were trained using the same patch-based protocol (256×256, stride 128).
 - The reported results correspond to the optimal decision threshold selected on the validation set.
-- FLOPs were constrained to remain within a practical deployment budget.
 
