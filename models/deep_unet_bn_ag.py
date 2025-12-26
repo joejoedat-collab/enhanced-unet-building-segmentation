@@ -1,3 +1,30 @@
+#Attentions Gates
+def attention_gate(x, g, inter_channels):
+    """
+    Attention gate:
+    x : encoder skip connection (H, W, Cx)
+    g : decoder feature (H, W, Cg) - already upsampled to same H, W
+    inter_channels : intermediate channels for the attention computation
+    """
+    # 1×1 conv to reduce channels
+    theta_x = layers.Conv2D(inter_channels, kernel_size=1, padding='same')(x)
+    phi_g   = layers.Conv2D(inter_channels, kernel_size=1, padding='same')(g)
+
+    # Combine and activate
+    add     = layers.Add()([theta_x, phi_g])
+    act     = layers.Activation('relu')(add)
+
+    # Produce attention mask
+    psi     = layers.Conv2D(1, kernel_size=1, padding='same')(act)
+    psi     = layers.Activation('sigmoid')(psi)
+
+    # Apply mask to skip connection
+    out = layers.Multiply()([x, psi])
+    return out
+
+
+
+
 #Deep U-Net Batch normalization + Attention Gates
 def deep_unet_att(input_size=(PATCH_SIZE, PATCH_SIZE, 3)):
     inputs = layers.Input(input_size)
