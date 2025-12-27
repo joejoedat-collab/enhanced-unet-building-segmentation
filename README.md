@@ -35,6 +35,48 @@ The final model consists of:
 The final implementation is available in: models/enhanced_unet_final.py
 
 ---
+Enhanced-UNet-Building-Segmentation/
+│
+├── README.md                    # Main documentation
+├── requirements.txt             # Python dependencies
+├── LICENSE                      # MIT or Apache-2.0
+│
+├── data/
+│   └── README.md                # Dataset download instructions (NO data files)
+│
+├── models/
+│   ├── unet_baseline.py
+│   ├── unet_bn.py
+│   ├── deep_unet_bn.py
+│   ├── deep_unet_bn_ag.py
+│   ├── deep_unet_bn_aspp.py
+│   ├── deep_unet_bn_ag_aspp.py
+│   └── enhanced_unet_final.py   # ⭐ YOUR FINAL MODEL (the one you attached)
+│
+├── training/
+│   ├── train_baseline.py
+│   ├── train_enhanced.py
+│   └── callbacks.py
+│
+├── evaluation/
+│   ├── metrics.py
+│   ├── threshold_search.py
+│   └── flops_counter.py
+│
+├── experiments/
+│   └── ablation_results.csv     # Table used in your paper
+│
+├── figures/
+│   ├── architecture.png
+│   ├── qualitative_results.png
+│   └── training_curves.png
+│
+└── scripts/
+    ├── predict_full_image.py
+    └── visualize_results.py
+
+
+
 ##  The directories are structured as seen below
 enhanced-unet-building-segmentation/
 │
