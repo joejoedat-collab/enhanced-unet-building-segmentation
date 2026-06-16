@@ -37,6 +37,7 @@ The final implementation is available in: models/enhanced_unet_final.py
 
 ---
 ##  The directories are structured as seen below
+```
 Enhanced-UNet-Building-Segmentation/
 │
 ├── README.md
@@ -90,4 +91,5 @@ Enhanced-UNet-Building-Segmentation/
 ├── training_analysis.ipynb
 ├── loss_function_analysis.ipynb
 └── dilation_rate_analysis.ipynb
+```
 
