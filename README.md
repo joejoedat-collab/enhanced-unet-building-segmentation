@@ -37,38 +37,57 @@ The final implementation is available in: models/enhanced_unet_final.py
 
 ---
 ##  The directories are structured as seen below
-enhanced-unet-building-segmentation/
+Enhanced-UNet-Building-Segmentation/
 │
 ├── README.md
 ├── requirements.txt
 ├── LICENSE
 │
 ├── models/
-│   └── enhanced_unet.py         
+│   ├── enhanced_unet.py
+│   ├── unet.py
+│   ├── deeplabv3plus.py
+│   └── hrnet.py
 │
 ├── losses/
-│   └── losses.py    Dice, BCE+Dice, Tversky
+│   └── losses.py
+│      # Binary Cross-Entropy (BCE)
+│      # Dice Loss
+│      # Tversky Loss
+│      # BCE + Dice Loss
 │
 ├── data/
-│   └── README.md           dataset instructions only
+│   └── README.md
+│      # Dataset download and preparation instructions
 │
 ├── training/
-│   ├── train_patch_based.py   training loop
+│   ├── train_patch_based.py
+│   ├── patch_generator.py
 │   └── callbacks.py
 │
 ├── evaluation/
 │   ├── metrics.py
 │   ├── threshold_search.py
-│   └── flops.py
+│   ├── evaluate_massachusetts.py
+│   └── evaluate_inria.py
 │
 ├── inference/
 │   └── predict_full_image.py
 │
 ├── experiments/
-│   └── ablation_table.md
+│   ├── ablation_study.md
+│   ├── dilation_rate_analysis.md
+│   └── loss_function_comparison.md
 │
-└── figures/
-    └── architecture.png
-
-
+├── figures/
+│   ├── architecture.png
+│   ├── attention_gate.png
+│   ├── aspp_module.png
+│   ├── qualitative_results_massachusetts.png
+│   └── qualitative_results_inria.png
+│
+└── notebooks/
+├── training_analysis.ipynb
+├── loss_function_analysis.ipynb
+└── dilation_rate_analysis.ipynb
 
