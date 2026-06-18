@@ -72,9 +72,6 @@ Enhanced-UNet-Building-Segmentation/
 │   ├── evaluate_massachusetts.py
 │   └── evaluate_inria.py
 │
-├── inference/
-│   └── predict_full_image.py
-│
 ├── experiments/
 │   ├── ablation_study.md
 │   ├── dilation_rate_analysis.md
