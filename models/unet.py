@@ -1,5 +1,6 @@
-#Define U-Net baseline
-def unet_model(input_size=(PATCH_SIZE, PATCH_SIZE, 3)):
+
+#Define U-Net model
+def unet_model(input_size=(256, 256, 3)):
     inputs = layers.Input(input_size)
 
     c1 = layers.Conv2D(64, 3, activation='relu', padding='same')(inputs)
@@ -46,3 +47,4 @@ def unet_model(input_size=(PATCH_SIZE, PATCH_SIZE, 3)):
     return Model(inputs, outputs)
 
 model = unet_model()
+model.compile(optimizer='adam', loss='binary_crossentropy', metrics=[precision_metric, recall_metric, accuracy_metric])
