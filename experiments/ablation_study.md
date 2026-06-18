@@ -44,9 +44,9 @@ and **loss function selection**.
 
 ## Notes
 
-- All models were trained using the same patch-based protocol (256×256, stride 128).
+- All models were trained using the same patch-based protocol (256×256, stride 128) for the Massachusetts Buildings Dataset and (512x512, stride 256) for the Inria building dataset.
 - The reported results correspond to the optimal decision threshold selected on the validation set.
-```
+  
 ## Table 2. Test Results on the INRIA Aerial Image Labeling Dataset
 
 | Model Variant      | IoU       | F1 Score  | Precision | Recall    | Accuracy  |
