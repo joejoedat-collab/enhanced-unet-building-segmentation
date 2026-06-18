@@ -63,4 +63,9 @@ def deep_unet_5levels_bn_aspp_softag_optimized(input_size=(256, 256, 3)):
 model = deep_unet_5levels_bn_aspp_softag_optimized(
     input_size=(PATCH_SIZE, PATCH_SIZE, 3)
 )
+model.compile(
+    optimizer='adam',
+    loss=bce_precision_dice_loss_v2,
+    metrics=[precision_metric, recall_metric, accuracy_metric]
+)
 
