@@ -1,4 +1,3 @@
-#Evaluation Matrix
 EPS = 1e-7
 
 def metrics_at(y_true, y_prob, t):
@@ -16,9 +15,9 @@ def metrics_at(y_true, y_prob, t):
     acc  = (tp + tn) / (tp + tn + fp + fn + EPS)
     return iou, f1, prec, rec, acc
 
-#Threshold
 # wider, denser grid tends to yield a better threshold
-THRESH_GRID = np.linspace(0.20, 0.60, 81)
+#THRESH_GRID = np.linspace(0.20, 0.60, 81)
+THRESH_GRID = np.linspace(0.30, 0.55, 151)
 
 y_val_prob = model.predict(x_val, verbose=0)
 best = (0.5, -1)  # (t, IoU)
